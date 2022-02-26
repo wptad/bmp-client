@@ -3,7 +3,7 @@
 
 const webdriver = require('selenium-webdriver');
 const By = webdriver.By;
-const until = webdriver.until;
+// const until = webdriver.until;
 const selProxy = require('selenium-webdriver/proxy');
 //const bmpClient = require('browsermob-proxy-client').createClient();
 const bmpClient = require('../index').createClient();
@@ -13,15 +13,15 @@ function main(){
   .then( () =>  bmpClient.createHar())
   .then( () =>  {
     let driver = new webdriver.Builder()
-     .forBrowser('phantomjs')
+     .forBrowser('chrome')
      .setProxy(selProxy.manual({http: 'localhost:' + bmpClient.proxy.port}))
      .build();
 
      return driver.get("http://search.yahoo.com")
      .then( () => bmpClient.getHar() )
-     .then( harData => {
+     .then( res => {
         //do something
-          console.log(harData);
+          console.log(res.data);
       });
   })
   .then( () => bmpClient.end() );

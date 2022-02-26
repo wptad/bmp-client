@@ -22,16 +22,14 @@
   },
   "main": "./index.js",
   "dependencies": {
-    "request": "^2.81.0",
-    "lodash": "^4.17.4",
-    "request-promise-native": "^1.0.3"
+    "axios": "^0.26.0",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "ip":"1.1.5",
     "chai": "4.2.0",
+    "ip": "1.1.5",
     "mocha": "6.1.4",
-    "phantomjs-prebuilt": "2.1.16",
-    "selenium-webdriver": "3.6.0"
+    "selenium-webdriver": "^4.1.1"
   },
   "scripts": {
     "test": "mocha",
@@ -41,6 +39,6 @@
   "jshintConfig": {
     "esversion": 6,
     "node": true,
-    "mocha":true
+    "mocha": true
   }
 }
